@@ -24,7 +24,6 @@
                     fontFamily: {
                         "display": ["Public Sans", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
@@ -32,18 +31,17 @@
 </head>
 
 <body class="bg-background-light text-slate-900">
-    <!-- Navigation -->
     <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white/95 backdrop-blur-md sticky top-0 z-50">
-        <div class="flex items-center gap-3 text-slate-900">
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 lg:px-20 py-4 bg-white/95 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-3 text-slate-900 min-w-0">
             <div
-                class="size-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                class="size-10 bg-primary rounded-xl flex-shrink-0 flex items-center justify-center text-white shadow-lg shadow-primary/20">
                 <span class="material-symbols-outlined text-2xl">home_health</span>
             </div>
-            <h2 class="text-xl font-extrabold leading-tight tracking-tight">Gladness & Ilya AFH</h2>
+            <h2 class="text-lg md:text-xl font-extrabold leading-tight tracking-tight truncate">Gladness & Ilya AFH</h2>
         </div>
         <div class="hidden lg:flex flex-1 justify-end gap-10 items-center">
-            <nav class="flex items-center gap-8">
+            <nav id="mobile-nav" class="hidden lg:flex items-center gap-8">
                 <a class="text-sm font-bold hover:text-primary transition-colors text-slate-600" href="#home">Home</a>
                 <a class="text-sm font-bold hover:text-primary transition-colors text-slate-600"
                     href="#services">Services</a>
@@ -52,34 +50,33 @@
                 <a class="text-sm font-bold hover:text-primary transition-colors text-slate-600"
                     href="#contact">Contact</a>
             </nav>
-            <button onclick="openPhoneModal()" class="btn-primary">Call Now</button>
+            <button onclick="openPhoneModal()" class="btn-primary flex-shrink-0">Call Now</button>
         </div>
-        <button id="mobile-menu-btn" class="lg:hidden text-slate-900">
+        <button id="mobile-menu-btn" class="lg:hidden text-slate-900 flex-shrink-0">
             <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
     </header>
 
     <main>
-        <!-- Home Section (Hero) -->
         <section id="home" class="relative min-h-[85vh] flex items-center justify-center p-0 overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
                 <img src="main.jpg" alt="Gladness & Ilya Adult Family Home" class="w-full h-full object-cover">
             </div>
-            <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-20 w-full animate-[fadeIn_1s_ease-out]">
-                <div class="max-w-2xl">
+            <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-20 w-full">
+                <div class="max-w-2xl reveal">
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-black uppercase tracking-widest mb-6">Welcome
                         to Our Home</span>
-                    <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8">
+                    <h1 class="text-4xl md:text-7xl font-black text-white leading-[1.1] mb-8">
                         A Warm, Loving Home for Your <span class="text-primary">Loved Ones</span>
                     </h1>
-                    <p class="text-xl text-slate-200 mb-12 leading-relaxed font-medium">
+                    <p class="text-lg md:text-xl text-slate-200 mb-12 leading-relaxed font-medium">
                         Experience compassionate elder care in a comfortable, family-oriented environment at Gladness &
                         Ilya Adult Family Home.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="#contact" class="btn-primary py-4 px-10 text-lg">Schedule a Tour</a>
+                        <a href="#contact" class="btn-primary py-4 px-10 text-lg text-center">Schedule a Tour</a>
                         <a href="#services"
                             class="inline-flex items-center justify-center px-10 py-4 rounded-xl border-2 border-white/30 text-white font-bold text-lg hover:bg-white/10 backdrop-blur-md transition-all">View
                             Services</a>
@@ -88,10 +85,9 @@
             </div>
         </section>
 
-        <!-- Quick Summary Section -->
         <section class="bg-white py-12">
             <div class="max-w-7xl mx-auto px-6 md:px-20">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div
                         class="bg-background-light p-6 rounded-2xl border border-primary/10 reveal flex flex-col items-center text-center">
                         <span class="material-symbols-outlined text-primary text-3xl mb-3">meeting_room</span>
@@ -105,7 +101,7 @@
                         <p class="font-bold text-slate-900">Shared Bathroom</p>
                     </div>
                     <div class="bg-primary p-6 rounded-2xl shadow-lg shadow-primary/20 reveal flex flex-col items-center text-center"
-                        style="transition-delay: 300ms;">
+                        style="transition-delay: 200ms;">
                         <span class="material-symbols-outlined text-white text-3xl mb-3">verified</span>
                         <h4 class="font-black text-sm uppercase tracking-widest text-white/70 mb-1">Status</h4>
                         <p class="font-black text-white">Accepting New Residents!</p>
@@ -114,15 +110,14 @@
             </div>
         </section>
 
-        <!-- Mission -->
-        <section class="bg-background-light py-20">
+        <section class="bg-background-light">
             <div class="max-w-4xl mx-auto text-center reveal">
                 <div
                     class="inline-flex items-center justify-center size-20 bg-primary/10 text-primary rounded-3xl mb-10 shadow-inner">
                     <span class="material-symbols-outlined text-4xl">favorite</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">Our Mission</h2>
-                <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium italic">
+                <h2 class="text-3xl md:text-5xl font-black mb-10 tracking-tight">Our Mission</h2>
+                <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium italic px-4">
                     "Our mission is to provide high-quality, personalized care that honors the dignity and independence
                     of every resident. We strive to create a sanctuary where seniors feel safe, loved, and truly at
                     home."
@@ -130,9 +125,8 @@
             </div>
         </section>
 
-        <!-- Cultural Fit & House Rules -->
         <section class="bg-white">
-            <div class="max-w-7xl mx-auto px-6 md:px-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-20">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
                     <div class="reveal">
                         <h2 class="text-3xl md:text-4xl font-black mb-8 tracking-tight">Great Cultural Fit</h2>
@@ -156,20 +150,21 @@
                                 <h4 class="font-black text-slate-900 uppercase tracking-widest text-sm mb-2">Seeking
                                     Resident</h4>
                                 <p class="text-xl font-black text-primary">Currently Seeking Male Resident</p>
-                                <p class="text-slate-500 font-medium">Note: Our facility is Co-Ed</p>
+                                <p class="text-slate-500 font-medium text-sm">Note: Our facility is Co-Ed</p>
                             </div>
                         </div>
                     </div>
                     <div class="reveal" style="transition-delay: 200ms;">
                         <h2 class="text-3xl md:text-4xl font-black mb-8 tracking-tight">House Rules</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center sm:text-left">
                             <div>
                                 <h4 class="font-black text-slate-400 uppercase tracking-widest text-sm mb-4">Pets</h4>
                                 <ul class="space-y-3 font-bold">
-                                    <li class="flex items-center gap-2 text-slate-400"><span
-                                            class="material-symbols-outlined text-sm">close</span> Pets Not Allowed</li>
-                                    <li class="flex items-center gap-2 text-primary"><span
-                                            class="material-symbols-outlined text-sm">check</span> Facility Has Pets
+                                    <li class="flex items-center justify-center sm:justify-start gap-2 text-slate-400">
+                                        <span class="material-symbols-outlined text-sm">close</span> Pets Not Allowed
+                                    </li>
+                                    <li class="flex items-center justify-center sm:justify-start gap-2 text-primary">
+                                        <span class="material-symbols-outlined text-sm">check</span> Facility Has Pets
                                     </li>
                                 </ul>
                             </div>
@@ -177,19 +172,21 @@
                                 <h4 class="font-black text-slate-400 uppercase tracking-widest text-sm mb-4">Mobility
                                     Access</h4>
                                 <ul class="space-y-3 font-bold">
-                                    <li class="flex items-center gap-2 text-primary"><span
-                                            class="material-symbols-outlined text-sm">accessible</span> Manual
-                                        Wheelchair Allowed</li>
-                                    <li class="flex items-center gap-2 text-primary"><span
-                                            class="material-symbols-outlined text-sm">chair</span> Power
-                                        Wheelchair/Scooter</li>
+                                    <li class="flex items-center justify-center sm:justify-start gap-2 text-primary">
+                                        <span class="material-symbols-outlined text-sm">accessible</span> Manual
+                                        Wheelchair Allowed
+                                    </li>
+                                    <li class="flex items-center justify-center sm:justify-start gap-2 text-primary">
+                                        <span class="material-symbols-outlined text-sm">chair</span> Power
+                                        Wheelchair/Scooter
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="mt-8">
                             <h4 class="font-black text-slate-400 uppercase tracking-widest text-sm mb-4">Tobacco &
                                 Medical THC</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 font-bold text-sm">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 font-bold text-sm">
                                 <span class="flex items-center gap-2"><span
                                         class="material-symbols-outlined text-primary text-sm">check</span> Allows
                                     Smoking (Designated)</span>
@@ -209,17 +206,14 @@
             </div>
         </section>
 
-        <!-- Complete Inclusions Section -->
-        <section class="bg-background-light py-20">
-            <div class="max-w-7xl mx-auto px-6 md:px-20">
+        <section class="bg-background-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-20">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">What's Included</h2>
-                    <p class="text-slate-600 text-xl font-medium">All these core services and amenities are included in
-                        our base price.</p>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6">What's Included</h2>
+                    <p class="text-slate-600 text-lg md:text-xl font-medium">All these core services and amenities are
+                        included in our base price.</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Treatments -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="reveal">
                         <h4 class="font-black text-primary uppercase tracking-widest text-xs mb-5">Treatments & Services
                         </h4>
@@ -235,7 +229,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Indoor/Outdoor -->
                     <div class="reveal" style="transition-delay: 100ms;">
                         <h4 class="font-black text-primary uppercase tracking-widest text-xs mb-5">Amenities</h4>
                         <ul class="space-y-4 font-bold text-slate-700">
@@ -245,12 +238,8 @@
                                     class="material-symbols-outlined text-primary">wifi</span> Wi-Fi Internet</li>
                             <li class="flex items-center gap-3"><span
                                     class="material-symbols-outlined text-primary">groups</span> Group Activities</li>
-                            <li class="flex items-center gap-3"><span
-                                    class="material-symbols-outlined text-primary">local_parking</span> Parking & Garden
-                            </li>
                         </ul>
                     </div>
-                    <!-- Meals & Hygiene -->
                     <div class="reveal" style="transition-delay: 200ms;">
                         <h4 class="font-black text-primary uppercase tracking-widest text-xs mb-5">Meals & Hygiene</h4>
                         <ul class="space-y-4 font-bold text-slate-700">
@@ -264,7 +253,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Housekeeping -->
                     <div class="reveal" style="transition-delay: 300ms;">
                         <h4 class="font-black text-primary uppercase tracking-widest text-xs mb-5">Housekeeping</h4>
                         <ul class="space-y-4 font-bold text-slate-700">
@@ -283,245 +271,196 @@
             </div>
         </section>
 
-        <!-- Detailed Services Grid -->
         <section id="services" class="bg-white">
-            <div class="max-w-[1200px] mx-auto">
+            <div class="max-w-[1200px] mx-auto px-6">
                 <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6">Specialized Care Plans</h2>
-                    <p class="text-slate-600 text-xl max-w-2xl mx-auto italic">Expert support for complex needs,
-                        including optional services that may impact pricing.</p>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6">Specialized Care Plans</h2>
+                    <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto italic">Expert support for complex
+                        needs, including specialized medical assistance.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Specialized Nursing -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <div
-                        class="group bg-background-light p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm reveal">
+                        class="group bg-background-light p-8 md:p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm reveal">
                         <div
                             class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-4xl">medical_services</span>
                         </div>
-                        <h3 class="text-3xl font-black mb-5">Nursing & Treatments</h3>
+                        <h3 class="text-2xl md:text-3xl font-black mb-5">Nursing & Treatments</h3>
                         <p class="text-slate-600 text-lg mb-8 leading-relaxed">Round-the-clock monitoring and
                             specialized medical assistance from our dedicated team.</p>
                         <ul class="space-y-5">
                             <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
+                                <span class="flex items-center gap-3 font-black text-slate-700"><span
                                         class="material-symbols-outlined text-primary">clinical_notes</span> Nurse
-                                    Delegator Availability</span>
+                                    Delegator</span>
                             </li>
                             <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
+                                <span class="flex items-center gap-3 font-black text-slate-700"><span
                                         class="material-symbols-outlined text-primary">volunteer_activism</span> Hospice
                                     Care</span>
                                 <p class="text-sm text-slate-500 font-medium ml-10">Compassionate end-of-life care
                                     focusing on respect and dignity.</p>
                             </li>
-                            <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
-                                        class="material-symbols-outlined text-primary">bed</span> Respite &
-                                    Repositioning</span>
-                                <p class="text-sm text-slate-500 font-medium ml-10">Short-term relief stays and regular
-                                    repositioning care for comfort.</p>
-                            </li>
                         </ul>
                     </div>
-                    <!-- Memory & Mental Health -->
                     <div
-                        class="group bg-background-light p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm reveal">
+                        class="group bg-background-light p-8 md:p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all shadow-sm reveal">
                         <div
                             class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-4xl">psychology</span>
                         </div>
-                        <h3 class="text-3xl font-black mb-5">Mental Health & Expertise</h3>
+                        <h3 class="text-2xl md:text-3xl font-black mb-5">Mental Health & Expertise</h3>
                         <p class="text-slate-600 text-lg mb-8 leading-relaxed">Specialized care for Alzheimer's,
                             memory-related diseases, and mental health management.</p>
                         <ul class="space-y-5">
                             <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
-                                        class="material-symbols-outlined text-primary">psychology</span> Memory Care
-                                    (Alzheimer's)</span>
+                                <span class="flex items-center gap-3 font-black text-slate-700"><span
+                                        class="material-symbols-outlined text-primary">psychology</span> Memory
+                                    Care</span>
                                 <p class="text-sm text-slate-500 font-medium ml-10">expertise to accommodate
                                     memory-related diseases with dignity.</p>
                             </li>
                             <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
+                                <span class="flex items-center gap-3 font-black text-slate-700"><span
                                         class="material-symbols-outlined text-primary">diversity_3</span> Developmental
                                     Disabilities</span>
                                 <p class="text-sm text-slate-500 font-medium ml-10">Personalized support for the unique
                                     needs of adults with disabilities.</p>
                             </li>
-                            <li class="flex flex-col gap-1">
-                                <span class="flex items-center gap-3 text-lg font-black text-slate-700"><span
-                                        class="material-symbols-outlined text-primary">spa</span> Mental Health
-                                    Care</span>
-                                <p class="text-sm text-slate-500 font-medium ml-10">Specialized support in a safe and
-                                    highly supportive environment.</p>
-                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonial Section -->
         <section class="bg-background-light">
-            <div class="max-w-5xl mx-auto text-center reveal">
+            <div class="max-w-5xl mx-auto text-center reveal px-6">
                 <div class="mb-12">
-                    <span class="material-symbols-outlined text-8xl text-primary/20">format_quote</span>
+                    <span class="material-symbols-outlined text-7xl md:text-8xl text-primary/20">format_quote</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold italic leading-relaxed text-slate-800 mb-12 px-6">
+                <h2 class="text-2xl md:text-4xl font-bold italic leading-relaxed text-slate-800 mb-12">
                     "Finding Gladness & Ilya was a blessing. The nursing staff is incredibly attentive, and the
                     nutritional meals have significantly improved my father's health. It truly feels like a home."
                 </h2>
                 <div class="flex flex-col items-center">
-                    <div class="size-32 rounded-full bg-cover bg-center mb-6 border-4 border-white shadow-xl bg-slate-200"
-                        style='background-image: url("owner.png");'>
-                    </div>
-                    <p class="font-black text-2xl text-slate-900">Ilya Gladkov</p>
+                    <div class="size-24 md:size-32 rounded-full bg-cover bg-center mb-6 border-4 border-white shadow-xl bg-slate-200"
+                        style='background-image: url("owner.png");'></div>
+                    <p class="font-black text-xl md:text-2xl text-slate-900">Ilya Gladkov</p>
                     <p class="text-primary font-bold">Facility Owner</p>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
         <section id="gallery" class="bg-white">
-            <div class="max-w-7xl mx-auto px-6 md:px-20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-20">
                 <div class="flex flex-col gap-4 mb-16 reveal">
                     <span class="text-primary font-black tracking-[0.2em] text-sm uppercase">Our Residence</span>
-                    <h2 class="text-4xl md:text-5xl font-black leading-tight tracking-tight">Home Gallery & Amenities
+                    <h2 class="text-3xl md:text-5xl font-black leading-tight tracking-tight">Home Gallery & Amenities
                     </h2>
-                    <p class="text-slate-500 text-xl font-medium max-w-2xl">Photos of our clean, comfortable, and safe
-                        facility in Washington.</p>
+                    <p class="text-slate-500 text-lg md:text-xl font-medium max-w-2xl">Photos of our clean, comfortable,
+                        and safe facility in Washington.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px] reveal">
-                    <!-- Main Hall -->
-                    <div class="md:col-span-8 bg-cover bg-center rounded-[3rem] relative overflow-hidden group cursor-pointer shadow-xl"
+                <div class="gallery-grid h-auto lg:h-[800px] reveal">
+                    <div class="col-span-12 lg:col-span-8 bg-cover bg-center rounded-[2rem] md:rounded-[3rem] relative overflow-hidden group h-[300px] lg:h-full shadow-xl"
                         style="background-image: url('holl.jpg');">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500">
                         </div>
-                        <div class="absolute bottom-10 left-10">
-                            <h3 class="text-white text-3xl font-black mb-2">Main Hallway</h3>
-                            <p class="text-white/80 text-lg font-medium">Bright, spacious, and easily accessible.</p>
+                        <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10">
+                            <h3 class="text-white text-2xl md:text-3xl font-black mb-2">Main Hallway</h3>
+                            <p class="text-white/80 text-sm md:text-lg font-medium">Bright, spacious, and easily
+                                accessible.</p>
                         </div>
                     </div>
-                    <!-- Side 1 -->
-                    <div class="md:col-span-4 grid grid-rows-2 gap-6">
-                        <div class="bg-cover bg-center rounded-[3rem] relative overflow-hidden group cursor-pointer shadow-xl"
+                    <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                        <div class="bg-cover bg-center rounded-[2rem] md:rounded-[3rem] relative overflow-hidden group h-[300px] lg:h-1/2 shadow-xl"
                             style="background-image: url('private-room.jpg');">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500">
                             </div>
-                            <div class="absolute bottom-8 left-8">
-                                <h3 class="text-white text-2xl font-black">Comfortable Room</h3>
+                            <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                                <h3 class="text-white text-xl md:text-2xl font-black">Comfortable Room</h3>
                             </div>
                         </div>
-                        <div class="bg-cover bg-center rounded-[3rem] relative overflow-hidden group cursor-pointer shadow-xl"
+                        <div class="bg-cover bg-center rounded-[2rem] md:rounded-[3rem] relative overflow-hidden group h-[300px] lg:h-1/2 shadow-xl"
                             style="background-image: url('holl2.jpg');">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500">
                             </div>
-                            <div class="absolute bottom-8 left-8">
-                                <h3 class="text-white text-2xl font-black">Gathering Area</h3>
+                            <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                                <h3 class="text-white text-xl md:text-2xl font-black">Gathering Area</h3>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Bottom Row -->
-                    <div class="md:col-span-4 bg-cover bg-center rounded-[3rem] relative overflow-hidden group cursor-pointer shadow-xl h-[300px]"
-                        style="background-image: url('bath-room.jpg');">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500">
-                        </div>
-                        <div class="absolute bottom-8 left-8">
-                            <h3 class="text-white text-2xl font-black">Clean Bathroom</h3>
-                        </div>
-                    </div>
-                    <div class="md:col-span-8 bg-cover bg-center rounded-[3rem] relative overflow-hidden group cursor-pointer shadow-xl h-[300px]"
-                        style="background-image: url('private-room2.jpg');">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500">
-                        </div>
-                        <div class="absolute bottom-8 left-8">
-                            <h3 class="text-white text-3xl font-black">Nurturing Environment</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Admissions Process -->
         <section class="bg-background-light">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">Admissions Process</h2>
-                    <p class="text-slate-600 text-xl font-medium max-w-2xl mx-auto">
-                        We are here to guide you through every step of finding the right care for your loved ones.
-                    </p>
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">Admissions Process</h2>
+                    <p class="text-slate-600 text-lg md:text-xl font-medium max-w-2xl mx-auto">We are here to guide you
+                        through every step of finding the right care for your loved ones.</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <!-- Step 1 -->
-                    <div
-                        class="relative flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal">
                         <div
                             class="size-14 bg-primary text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-lg shadow-primary/30">
                             1</div>
                         <h4 class="font-black text-xl mb-4">Initial Consultation</h4>
-                        <p class="text-slate-500 font-medium">Discuss care needs and our current availability.</p>
+                        <p class="text-slate-500 text-sm font-medium">Discuss care needs and our current availability.
+                        </p>
                     </div>
-                    <!-- Step 2 -->
-                    <div class="relative flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
+                    <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
                         style="transition-delay: 100ms;">
                         <div
                             class="size-14 bg-primary/20 text-primary rounded-full flex items-center justify-center font-black text-2xl mb-6">
                             2</div>
-                        <h4 class="font-black text-xl mb-4">Personal Home Tour</h4>
-                        <p class="text-slate-500 font-medium">Experience the environment and meet our staff.</p>
+                        <h4 class="font-black text-xl mb-4">Home Tour</h4>
+                        <p class="text-slate-500 text-sm font-medium">Experience the environment and meet our staff.</p>
                     </div>
-                    <!-- Step 3 -->
-                    <div class="relative flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
+                    <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
                         style="transition-delay: 200ms;">
                         <div
                             class="size-14 bg-primary/20 text-primary rounded-full flex items-center justify-center font-black text-2xl mb-6">
                             3</div>
-                        <h4 class="font-black text-xl mb-4">Clinical Assessment</h4>
-                        <p class="text-slate-500 font-medium">Professional evaluation of required care level.</p>
+                        <h4 class="font-black text-xl mb-4">Assessment</h4>
+                        <p class="text-slate-500 text-sm font-medium">Professional evaluation of required care level.
+                        </p>
                     </div>
-                    <!-- Step 4 -->
-                    <div class="relative flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
+                    <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2rem] shadow-sm reveal"
                         style="transition-delay: 300ms;">
                         <div
                             class="size-14 bg-primary/20 text-primary rounded-full flex items-center justify-center font-black text-2xl mb-6">
                             4</div>
                         <h4 class="font-black text-xl mb-4">Welcome Home</h4>
-                        <p class="text-slate-500 font-medium">Finalize paperwork and select a move-in date.</p>
+                        <p class="text-slate-500 text-sm font-medium">Finalize paperwork and select a move-in date.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section (Map & Info) -->
         <section id="contact" class="bg-background-light py-20">
             <div class="max-w-7xl mx-auto px-6 md:px-20">
                 <div class="text-center mb-16 reveal">
                     <h2 class="text-4xl md:text-5xl font-black mb-6">Contact Us</h2>
                     <p class="text-slate-600 text-xl font-medium max-w-2xl mx-auto">We are centrally located in Renton,
-                        WA. Feel free to call or visit us for a tour.</p>
+                        WA.</p>
                 </div>
-
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-                    <!-- Contact Cards -->
                     <div class="lg:col-span-4 flex flex-col gap-6">
-                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal h-full">
+                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal">
                             <div
                                 class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                                 <span class="material-symbols-outlined text-3xl">call</span>
                             </div>
                             <h4 class="font-black text-slate-400 uppercase tracking-widest text-xs mb-2">Phone Number
                             </h4>
-                            <p class="text-2xl font-black text-slate-900">+1 (425) 757-7425</p>
+                            <p class="text-xl md:text-2xl font-black text-slate-900">+1 (425) 757-7425</p>
                         </div>
-                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal h-full"
+                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal"
                             style="transition-delay: 100ms;">
                             <div
                                 class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
@@ -529,9 +468,10 @@
                             </div>
                             <h4 class="font-black text-slate-400 uppercase tracking-widest text-xs mb-2">Email Address
                             </h4>
-                            <p class="text-xl font-black text-slate-900">care@gladnessilyaafh.com</p>
+                            <p class="text-lg md:text-xl font-black text-slate-900 break-all">care@gladnessilyaafh.com
+                            </p>
                         </div>
-                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal h-full"
+                        <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 reveal"
                             style="transition-delay: 200ms;">
                             <div
                                 class="size-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
@@ -539,103 +479,78 @@
                             </div>
                             <h4 class="font-black text-slate-400 uppercase tracking-widest text-xs mb-2">Our Location
                             </h4>
-                            <p class="text-xl font-black text-slate-900 leading-tight">1724 Se 30Th Pl<br>Renton, WA
-                                98055</p>
+                            <p class="text-lg md:text-xl font-black text-slate-900">1724 Se 30Th Pl, Renton, WA 98055
+                            </p>
                         </div>
                     </div>
-
-                    <!-- Map Integration -->
-                    <div class="lg:col-span-8 reveal overflow-hidden rounded-[3rem] shadow-2xl border-8 border-white min-h-[500px]"
+                    <div class="lg:col-span-8 reveal overflow-hidden rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border-4 md:border-8 border-white min-h-[400px]"
                         style="transition-delay: 300ms;">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2698.810156372106!2d-122.1819!3d47.4526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d49c0d95957%3A0xe54c4c8e7e1e6b!2s1724%20SE%2030th%20Pl%2C%20Renton%2C%20WA%2098055!5e0!3m2!1sen!2sus!4v1710350000000!5m2!1sen!2sus"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 pt-20 pb-10 px-6 md:px-20">
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-10 px-6 lg:px-20 text-center md:text-left">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-3 text-slate-900 mb-8">
-                        <div class="size-10 bg-primary rounded-xl flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined">home_health</span>
-                        </div>
+                    <div class="flex items-center justify-center md:justify-start gap-3 text-slate-900 mb-8">
+                        <div class="size-10 bg-primary rounded-xl flex items-center justify-center text-white"><span
+                                class="material-symbols-outlined">home_health</span></div>
                         <h2 class="text-2xl font-extrabold leading-tight">Gladness & Ilya AFH</h2>
                     </div>
-                    <p class="text-slate-500 text-lg max-w-sm font-medium">
-                        A premier adult family home dedicated to providing exceptional care in a nurturing, home-like
-                        setting for over 15 years.
-                    </p>
+                    <p class="text-slate-500 text-lg max-w-sm font-medium mx-auto md:mx-0">A premier adult family home
+                        dedicated to providing exceptional care in a nurturing, home-like setting for over 15 years.</p>
                 </div>
                 <div>
-                    <h3 class="font-black text-lg mb-8 uppercase tracking-widest text-slate-400">Quick Links</h3>
-                    <ul class="space-y-4">
-                        <li><a href="#home" class="text-slate-600 font-bold hover:text-primary transition-colors">About
-                                Us</a></li>
-                        <li><a href="#services"
-                                class="text-slate-600 font-bold hover:text-primary transition-colors">Our Services</a>
-                        </li>
-                        <li><a href="#gallery"
-                                class="text-slate-600 font-bold hover:text-primary transition-colors">Photo Gallery</a>
-                        </li>
-                        <li><a href="#contact"
-                                class="text-slate-600 font-bold hover:text-primary transition-colors">Contact Us</a>
-                        </li>
+                    <h4 class="font-bold text-lg mb-8 uppercase tracking-widest text-slate-400">Links</h4>
+                    <ul class="space-y-4 font-bold">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-primary transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-black text-lg mb-8 uppercase tracking-widest text-slate-400">Location</h3>
-                    <p class="text-slate-600 font-bold mb-4">
-                        1724 Se 30Th Pl<br>
-                        Renton, WA 98055
-                    </p>
+                    <h4 class="font-bold text-lg mb-8 uppercase tracking-widest text-slate-400">Address</h4>
+                    <p class="text-slate-600 font-bold mb-4">1724 Se 30Th Pl<br>Renton, WA 98055</p>
                     <a href="https://maps.google.com/?q=1724+Se+30Th+Pl+Renton+WA+98055" target="_blank"
-                        class="text-primary font-bold inline-flex items-center gap-2 underline decoration-primary/30 underline-offset-4">
-                        <span class="material-symbols-outlined">location_on</span> View on Map
-                    </a>
+                        class="text-primary font-bold inline-flex items-center gap-2 underline decoration-primary/30 underline-offset-4"><span
+                            class="material-symbols-outlined">location_on</span> Open Map</a>
                 </div>
             </div>
             <div class="pt-10 border-t border-slate-100 text-center text-slate-400 font-bold text-sm">
-                <p>© 2026 Gladness & Ilya Adult Family Home. All rights reserved. | Licensed & Bonded</p>
+                <p>© 2026 Gladness & Ilya Adult Family Home. Licensed & Bonded</p>
             </div>
         </div>
     </footer>
 
-    <!-- Phone Modal -->
     <div id="phone-modal"
         class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-        <div class="bg-white rounded-3xl w-full max-w-md p-8 relative shadow-2xl animate-slide-up">
-            <button onclick="closePhoneModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
-                <span class="material-symbols-outlined text-2xl">close</span>
-            </button>
-
-            <h3 class="text-2xl font-black text-slate-900 mb-2">Facility Phone Number</h3>
+        <div
+            class="bg-white rounded-[2rem] md:rounded-3xl w-full max-w-md p-6 md:p-8 relative shadow-2xl animate-slide-up">
+            <button onclick="closePhoneModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600"><span
+                    class="material-symbols-outlined text-2xl">close</span></button>
+            <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-2">Facility Phone Number</h3>
             <p class="text-slate-500 font-medium mb-8">Let them know we sent ya!</p>
-
-            <div class="bg-background-light rounded-2xl p-6 flex items-center justify-between group">
+            <div
+                class="bg-background-light rounded-2xl p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <a href="tel:+14257577425"
-                    class="flex items-center gap-4 text-slate-900 transition-transform active:scale-95">
-                    <span class="material-symbols-outlined text-primary text-2xl">call</span>
-                    <span class="text-2xl font-black tracking-tight">(425) 757-7425</span>
-                </a>
+                    class="flex items-center gap-4 text-slate-900 active:scale-95 transition-transform"><span
+                        class="material-symbols-outlined text-primary text-2xl">call</span><span
+                        class="text-xl md:text-2xl font-black tracking-tight">(425) 757-7425</span></a>
                 <button onclick="copyToClipboard('+1 425-757-7425')"
-                    class="flex items-center gap-2 text-primary hover:text-primary/80 font-bold transition-all active:scale-90 px-3 py-2 rounded-xl hover:bg-primary/10">
-                    <span class="material-symbols-outlined text-xl">content_copy</span>
-                    <span>Copy</span>
+                    class="flex items-center gap-2 text-primary hover:text-primary/80 font-bold active:scale-90 px-3 py-2 rounded-xl hover:bg-primary/10">
+                    <span class="material-symbols-outlined text-xl">content_copy</span><span>Copy</span>
                 </button>
             </div>
-
             <div id="copy-toast"
                 class="absolute -bottom-16 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-2 rounded-full font-bold text-sm opacity-0 transition-opacity pointer-events-none">
-                Copied to clipboard!
-            </div>
+                Copied!</div>
         </div>
     </div>
 

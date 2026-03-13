@@ -1,10 +1,10 @@
-/* Google Fonts - Material Symbols */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined' !important;
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
-    /* Set a fallback size */
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
@@ -31,6 +31,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -50,7 +51,6 @@ h6 {
     color: #0f172a;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -83,7 +83,8 @@ h6 {
 
 .reveal {
     opacity: 0;
-    transition: all 0.8s ease-out;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal.active {
@@ -91,7 +92,6 @@ h6 {
     transform: translateY(0);
 }
 
-/* Custom UI Elements */
 .btn-primary {
     background-color: var(--primary);
     color: white;
@@ -109,7 +109,7 @@ h6 {
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
-    transform: scale(1.05);
+    transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(84, 207, 23, 0.3);
 }
 
@@ -120,12 +120,6 @@ h6 {
     border: 1px solid var(--glass-border);
 }
 
-/* Hero Section Refinements */
-.hero-gradient {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-}
-
-/* Section Spacing */
 section {
     padding: 5rem 1.5rem;
 }
@@ -133,5 +127,35 @@ section {
 @media (min-width: 768px) {
     section {
         padding: 8rem 5rem;
+    }
+}
+
+@media (max-width: 1023px) {
+    #mobile-nav.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        z-index: 40;
+    }
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+    .gallery-grid>div {
+        grid-column: span 12 !important;
+        height: 300px !important;
     }
 }

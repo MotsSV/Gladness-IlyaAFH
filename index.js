@@ -1,28 +1,29 @@
-// Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const nav = document.querySelector('nav');
+const mobileNav = document.getElementById('mobile-nav');
 
-if (mobileMenuBtn) {
+if (mobileMenuBtn && mobileNav) {
     mobileMenuBtn.addEventListener('click', () => {
-        nav.classList.toggle('hidden');
-        nav.classList.toggle('flex');
-        nav.classList.toggle('flex-col');
-        nav.classList.toggle('absolute');
-        nav.classList.toggle('top-full');
-        nav.classList.toggle('left-0');
-        nav.classList.toggle('right-0');
-        nav.classList.toggle('bg-white');
-        nav.classList.toggle('p-6');
-        nav.classList.toggle('shadow-xl');
+        mobileNav.classList.toggle('active');
+        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+            icon.textContent = mobileNav.classList.contains('active') ? 'close' : 'menu';
+        }
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = 'menu';
+        });
     });
 }
 
-// Scroll Reveal
 const revealElements = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {
     revealElements.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.85) {
+        if (rect.top < window.innerHeight * 0.9) {
             el.classList.add('active');
         }
     });
@@ -31,7 +32,6 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Phone Modal Functionality
 const phoneModal = document.getElementById('phone-modal');
 const copyToast = document.getElementById('copy-toast');
 
@@ -45,19 +45,20 @@ function closePhoneModal() {
     document.body.style.overflow = 'auto';
 }
 
-// Close modal when clicking outside
-phoneModal.addEventListener('click', (e) => {
-    if (e.target === phoneModal) {
-        closePhoneModal();
-    }
-});
+if (phoneModal) {
+    phoneModal.addEventListener('click', (e) => {
+        if (e.target === phoneModal) closePhoneModal();
+    });
+}
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        copyToast.style.opacity = '1';
-        setTimeout(() => {
-            copyToast.style.opacity = '0';
-        }, 2000);
+        if (copyToast) {
+            copyToast.style.opacity = '1';
+            setTimeout(() => {
+                copyToast.style.opacity = '0';
+            }, 2000);
+        }
     }).catch(err => {
         console.error('Failed to copy: ', err);
     });
