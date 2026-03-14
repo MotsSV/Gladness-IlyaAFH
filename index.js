@@ -3,16 +3,19 @@ const mobileNav = document.getElementById('mobile-nav');
 
 if (mobileMenuBtn && mobileNav) {
     mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
+        mobileNav.classList.toggle('hidden');
+        mobileNav.classList.toggle('flex');
+
         const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
         if (icon) {
-            icon.textContent = mobileNav.classList.contains('active') ? 'close' : 'menu';
+            icon.textContent = mobileNav.classList.contains('hidden') ? 'menu' : 'close';
         }
     });
 
     mobileNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
+            mobileNav.classList.add('hidden');
+            mobileNav.classList.remove('flex');
             const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
             if (icon) icon.textContent = 'menu';
         });
