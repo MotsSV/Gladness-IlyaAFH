@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    Gladness & Ilya AFH — Modern 3D Redesign
    ============================================================ */
 
@@ -22,21 +22,21 @@
 }
 
 :root {
-    --primary: #4bbf12;
-    --primary-deep: #2f8c0a;
-    --primary-glow: #7de84a;
+    --primary: #1aa3d8;
+    --primary-deep: #0b6ea3;
+    --primary-glow: #63d3f2;
     --accent-warm: #ffb14e;
     --accent-warm-deep: #f5921e;
-    --cream: #fbfaf6;
-    --background-light: #f5f8f2;
-    --background-dark: #12200c;
-    --ink: #14210d;
-    --text-slate: #46514a;
-    --muted: #8a938c;
+    --cream: #f7fbfe;
+    --background-light: #eef5fb;
+    --background-dark: #0a1621;
+    --ink: #0c1b26;
+    --text-slate: #46535e;
+    --muted: #8794a1;
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.55);
-    --shadow-soft: 0 24px 60px -24px rgba(31, 66, 12, 0.28);
-    --shadow-lift: 0 40px 90px -30px rgba(31, 66, 12, 0.42);
+    --shadow-soft: 0 24px 60px -24px rgba(12, 44, 74, 0.28);
+    --shadow-lift: 0 40px 90px -30px rgba(12, 44, 74, 0.42);
     --radius: 2rem;
 }
 
@@ -169,7 +169,7 @@ section {
     justify-content: center;
     gap: .5rem;
     text-decoration: none;
-    box-shadow: 0 12px 26px -10px rgba(47, 140, 10, 0.65);
+    box-shadow: 0 12px 26px -10px rgba(11, 110, 163, 0.65);
     overflow: hidden;
 }
 
@@ -184,7 +184,7 @@ section {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 22px 40px -12px rgba(47, 140, 10, 0.7);
+    box-shadow: 0 22px 40px -12px rgba(11, 110, 163, 0.7);
 }
 
 .btn-primary:hover::after { transform: translateX(120%); }
@@ -218,7 +218,7 @@ section {
 
 .card {
     background: #ffffff;
-    border: 1px solid rgba(31, 66, 12, 0.06);
+    border: 1px solid rgba(12, 44, 74, 0.06);
     border-radius: var(--radius);
     box-shadow: var(--shadow-soft);
     transition: transform .5s cubic-bezier(.2,.9,.3,1), box-shadow .5s ease, border-color .5s ease;
@@ -227,7 +227,7 @@ section {
 .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lift);
-    border-color: rgba(75, 191, 18, 0.28);
+    border-color: rgba(26, 163, 216, 0.28);
 }
 
 /* ---------- 3D tilt ---------- */
@@ -248,8 +248,8 @@ section {
     gap: .5rem;
     padding: .45rem 1rem;
     border-radius: 999px;
-    background: rgba(75, 191, 18, 0.1);
-    border: 1px solid rgba(75, 191, 18, 0.2);
+    background: rgba(26, 163, 216, 0.1);
+    border: 1px solid rgba(26, 163, 216, 0.2);
     color: var(--primary-deep);
     font-size: .72rem;
     font-weight: 900;
@@ -263,9 +263,9 @@ section {
     align-items: center;
     justify-content: center;
     border-radius: 1.25rem;
-    background: linear-gradient(135deg, rgba(75,191,18,.16), rgba(75,191,18,.05));
+    background: linear-gradient(135deg, rgba(26,163,216,.16), rgba(26,163,216,.05));
     color: var(--primary-deep);
-    border: 1px solid rgba(75,191,18,.18);
+    border: 1px solid rgba(26,163,216,.18);
 }
 
 /* ---------- Reveal animation ---------- */
@@ -289,8 +289,8 @@ section {
 .site-header.scrolled .header-inner {
     background: rgba(255,255,255,.8);
     backdrop-filter: blur(16px);
-    box-shadow: 0 10px 30px -18px rgba(31,66,12,.35);
-    border-color: rgba(31,66,12,.08);
+    box-shadow: 0 10px 30px -18px rgba(12,44,74,.35);
+    border-color: rgba(12,44,74,.08);
 }
 
 /* Marquee-free stat pop */
@@ -365,7 +365,7 @@ section {
 }
 .amenity .material-symbols-outlined {
     color: var(--primary-deep);
-    background: rgba(75,191,18,.12);
+    background: rgba(26,163,216,.12);
     border-radius: 10px;
     padding: 6px;
     font-size: 20px;
@@ -385,7 +385,7 @@ section {
     font-size: 1.6rem;
     color: white;
     background: linear-gradient(135deg, var(--primary), var(--primary-deep));
-    box-shadow: 0 14px 26px -12px rgba(47,140,10,.7);
+    box-shadow: 0 14px 26px -12px rgba(11,110,163,.7);
 }
 
 /* ---------- Modal ---------- */
@@ -402,14 +402,14 @@ section {
     padding: .55rem 1.15rem;
     border-radius: 999px;
     background: #fff;
-    border: 1px solid rgba(31,66,12,.08);
+    border: 1px solid rgba(12,44,74,.08);
     font-weight: 800;
     color: var(--ink);
-    box-shadow: 0 8px 18px -14px rgba(31,66,12,.5);
+    box-shadow: 0 8px 18px -14px rgba(12,44,74,.5);
 }
 
 /* scrollbar */
-::selection { background: rgba(75,191,18,.25); }
+::selection { background: rgba(26,163,216,.25); }
 
 /* ============================================================
    Mobile refinements
@@ -422,7 +422,7 @@ section {
     .aurora .a3 { width: 70vw; height: 70vw; }
 
     /* Cards sit a touch tighter, softer shadow */
-    .card { border-radius: 1.5rem; box-shadow: 0 16px 40px -22px rgba(31,66,12,.28); }
+    .card { border-radius: 1.5rem; box-shadow: 0 16px 40px -22px rgba(12,44,74,.28); }
 
     /* Disable hover-lift transforms that feel odd on touch */
     .card-hover:hover,
